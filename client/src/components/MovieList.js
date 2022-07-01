@@ -15,12 +15,7 @@ function MovieList(props) {
       });
   }, []);
 
-  const categories = movies
-    .map((movie) => movie.category)
-    .filter(
-      (category, index, categories) => categories.indexOf(category) === index
-    )
-    .sort();
+  const categories = movies.map((movie) => movie.category).filter((category, index, categories) => categories.indexOf(category) === index).sort();
 
   const displayedMovies = movies.filter(
     (movie) => selectedCategory === "All" || movie.category === selectedCategory
